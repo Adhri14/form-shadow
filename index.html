@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Form Shadow</title>
+</head>
+<body>
+  <form action="" class="login">
+    <h2>Form Shadow</h2>
+    <div class="txtb">
+      <input type="text" class="input" placeholder="Username">
+      <div class="icon-user fas fa-user"></div>
+    </div>
+    <div class="txtb">
+      <input type="password" class="input" id="input-pass" placeholder="Password">
+      <div class="icon-key fas fa-key"></div>
+      <div class="show-password fas fa-eye"></div>
+    </div>
+    <button type="submit" class="btn">Login</button>
+    <a href="#">Forgot password</a>
+    <a href="#">Sign up</a>
+  </form>
+
+  <script>
+    const eye = document.querySelector('.show-password');
+    const input = document.querySelector('#input-pass');
+
+    eye.addEventListener('click', function () {
+      if (this.classList[2] == 'fa-eye') {
+        this.classList.remove('fa-eye');
+        this.classList.add('fa-eye-slash');
+        input.type = 'text';
+      } else {
+        this.classList.remove('fa-eye-slash');
+        this.classList.add('fa-eye');
+        input.type = 'password';
+      }
+    });
+  </script>
+</body>
+</html>
